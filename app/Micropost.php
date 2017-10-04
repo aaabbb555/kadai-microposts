@@ -11,4 +11,8 @@ class Micropost extends Model
     public function user(){
       return $this->belongsTo(User::class);
     }
+    
+    public function favolite_user(){
+        return $this->belongsToMany(User::class, 'favolite', 'post_id', 'user_id')->withTimestamps();
+    }
 }

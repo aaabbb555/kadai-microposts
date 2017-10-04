@@ -18,6 +18,7 @@
         <li role="presentation" class="{{ Request::is('users/' . $user->id) ? 'active' : '' }}"><a href="{{ route('users.show', ['id' => $user->id]) }}">Microposts <span class="badge">{{ $count_microposts }}</span></a></li>
         <li role="presentation" class="{{ Request::is('users/*/followings') ? 'active' : '' }}"><a href="{{ route('users.followings', ['id' => $user->id]) }}">Followings <span class="badge">{{ $count_followings }}</span></a></li>
         <li role="presentation" class="{{ Request::is('users/*/followers') ? 'active' : '' }}"><a href="{{ route('users.followers', ['id' => $user->id]) }}">Followers <span class="badge">{{ $count_followers }}</span></a></li>
+        <li role="presentation" class="{{ Request::is('users/*/favolite_micropost') ? 'active' : '' }}"><a href="{{ route('users.favolite_micropost', ['id' => $user->id]) }}">Favolites <span class="badge">{{ $count_favolites }}</span></a></li>
       </ul>
       @if(count($microposts) > 0)
         @include('microposts.microposts', ['microposts' => $microposts])

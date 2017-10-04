@@ -18,6 +18,7 @@
             {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!}
           {!! Form::close() !!}
         @endif
+        @include('user_favolite.favolite_button', ['micropost' => $micropost])
       </div>
     </div>
   </li>

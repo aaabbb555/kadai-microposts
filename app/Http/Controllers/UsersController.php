@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\User;
+use App\Micropost;
 
 class UsersController extends Controller{
   public function index(){
@@ -52,5 +53,19 @@ class UsersController extends Controller{
     $data += $this->counts($user);
     
     return view('users.followers', $data);
+  }
+  
+  public function favolite_micropost($id){
+    $user = User::find($id);
+    $favolite_micropost = $user->favolite_micropost()->paginate(10);
+    
+    $data = [
+      'user' => $user,
+      'microposts' => $favolite_micropost,
+    ];
+    
+    $data += $this->counts($user);
+    
+    return view('users.favolite_micropost', $data);
   }
 }

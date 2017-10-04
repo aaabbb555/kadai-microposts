@@ -10,6 +10,7 @@
           </div>
           {!! Form::submit('Post', ['class' => 'btn btn-primary btn-block']) !!}
         {!! Form::close() !!}
+        {!! link_to_route('users.favolite_micropost', 'Favolites', ['id' => Auth::user()->id]) !!}
       </aside>
       <div class="col-xs-8">
         @if (count($microposts) > 0)

@@ -13,6 +13,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::check())
+                        <li>{!! link_to_route('users.favolite_micropost', 'Favolites', ['id' => Auth::user()->id]) !!}</li>
                         <li>{!! link_to_route('users.index', 'Users') !!}</li>
                         <li class="dropdown">
                             <a hredf="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
